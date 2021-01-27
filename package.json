@@ -1,12 +1,16 @@
 {
-  "name": "playground-vue2",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue2-dnd-grid",
+  "version": "1.0.0",
+  "main": "dist/vue2-dnd-grid.common.js",
+  "author": "Kocheng <devil871018@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue2-dnd-grid ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",

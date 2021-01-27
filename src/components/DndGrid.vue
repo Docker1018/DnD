@@ -29,8 +29,8 @@
 </template>
 <script>
 // import { debounce } from "lodash";
-import windowSize from "@/components/DndGrid/reSize.js";
-import GridItem from "@/components/DndGrid/GridItem";
+import windowSize from "@/components/reSize.js";
+import GridItem from "@/components/GridItem";
 export default {
   name: "Grid",
   components: {
