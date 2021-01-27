@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(ref="self"
+  #GridItem(ref="self"
       :class="className"
       :style="style"
       @mousedown="mousedown"

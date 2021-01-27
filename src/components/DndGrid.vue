@@ -1,6 +1,6 @@
 
 <template lang="pug">
-  .v-grid(:style="style" ref="vGrid")
+  #DndGrid.v-grid(:style="style" ref="vGrid")
     GridItem(v-for="item in list"
              :key="item.index"
              :index="item.index"
@@ -30,9 +30,9 @@
 <script>
 // import { debounce } from "lodash";
 import windowSize from "@/components/reSize.js";
-import GridItem from "@/components/GridItem";
+import GridItem from "@/components/GridItem.vue";
 export default {
-  name: "Grid",
+  name: "DndGrid",
   components: {
     GridItem
   },
