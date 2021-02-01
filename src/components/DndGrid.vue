@@ -1,34 +1,34 @@
 
 <template lang="pug">
-  #DndGrid.v-grid(:style="style" ref="vGrid")
-    GridItem(v-for="item in list"
-             :key="item.index"
-             :index="item.index"
-             :sort="item.sort"
-             :draggable="canDrag"
-             :drag-delay="dragDelay"
-             :row-count="rowCount"
-             :cell-width="cellWidth"
-             :cell-height="cellHeight"
-             :window-width="currentWidth"
-             :row-shift="rowShift"
-             :currentScroll="currentScroll"
-             :scrolls="scrollSize"
-             @dragstart="OnDragStart"
-             @dragend="OnDragEnd"
-             @drag="OnDrag"
-             @click="OnClick"
-             @mouse-down="MouseDown"
-             @mouse-move="MouseMove")
-      slot(name="cell"
-           :item="item.item"
-           :index="item.index"
-           :sort="item.sort"
-           :remove="() => { RemoveItem(v) }")
+  #DndGrid
+    .v-grid(:style="style" ref="vGrid")
+      GridItem(v-for="item in list"
+              :key="item.index"
+              :index="item.index"
+              :sort="item.sort"
+              :draggable="canDrag"
+              :drag-delay="dragDelay"
+              :row-count="rowCount"
+              :cell-width="cellWidth"
+              :cell-height="cellHeight"
+              :window-width="currentWidth"
+              :row-shift="rowShift"
+              :currentScroll="currentScroll"
+              :scrolls="scrollSize"
+              @dragstart="OnDragStart"
+              @dragend="OnDragEnd"
+              @drag="OnDrag"
+              @click="OnClick"
+              @mouse-down="MouseDown"
+              @mouse-move="MouseMove")
+        slot(name="cell"
+            :item="item.item"
+            :index="item.index"
+            :sort="item.sort"
+            :remove="() => { RemoveItem(v) }")
   </div>
 </template>
 <script>
-// import { debounce } from "lodash";
 import windowSize from "@/components/reSize.js";
 import GridItem from "@/components/GridItem.vue";
 export default {
@@ -332,10 +332,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-  .v-grid {
-    display: block;
-    position: relative;
+#DndGrid {
     width: 100%;
     height: 100%;
-  }
+    overflow: auto;
+    .v-grid {
+      display: block;
+      position: relative;
+    }
+}
 </style>

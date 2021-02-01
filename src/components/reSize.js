@@ -5,10 +5,6 @@ export default {
         currentWidth: 0
       };
     },
-    // created () {
-    //   window.addEventListener("resize", this.getWindowSize);
-    //   this.getWindowSize();
-    // },
     mounted () {
       window.addEventListener("resize", this.getWindowSize);
       this.getWindowSize();
